@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    environment:
+      - LETTERBOXED_USERNAME=
+      - TMDB_API_KEY=
+      - TMDB_LOGIN=
+      - TMDB_PASSWORD=
+      - COUNTRY=
+      - LOOP_INTERVAL=
+      - GENERAL_PROVIDERS=
+      - MY_WATCHLIST_ID=  # List ID for "my-watchlist"
+      - NOT_ON_STREAMING_ID=  # List ID for "Not-on-streaming"
+      - STREAMING_MAX_ID=  # List ID for "streaming-max"
+      - STREAMING_DISNEY_ID=  # List ID for "streaming-disney"
+      - STREAMING_AMA_PRIME_ID=  # List ID for "amazon prime video"
+      - STREAMING_SKYSHOWTIME_ID=  # List ID for "skyshowtime"
+    volumes:
+      - .:/app
+    command: python script.py
